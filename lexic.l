@@ -37,7 +37,6 @@ parameter \((var v[0-9]+)?(, var v[0-9]+)*\)
 {identifierfun}                 {return IFU;}
 {parameter}                     {return PAR;}
 "back"                          {return BCK;}
-{identifierfun}                 {return IFU;}
 "seek"                          {return SEK;}
 "funcEnd"                       {return FUE;}
 "capture"                       {return CAP;}
