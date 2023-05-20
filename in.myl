@@ -1,0 +1,18 @@
+var v1?
+var v1 = "Hola"?
+var v2 = -5? 
+var v3 = 5.0?
+v1 = -1.2?
+v32 = "String"*2?
+v1= 1*2 ?
+v1 = fun0[v1]? 
+v1 = fun5[]? 
+v1 + v1? 
+whether (5 < v10) v20 = 5? end
+whether (5 < v10) v20 = 5? no v20 = 0?  end
+until (1 < v1) v15 = v16 +1?  end
+function fun0 (var v1 var v2) v1 = v1 + v2? back v2? funcEnd
+function fun0 () v1 = v1 + v2? back v2? funcEnd
+function fun0 (var v1var v2) back v2? funcEnd
+function fun0 ()  back v2? funcEnd
+seek 1/0? capture fun0[v1 v2]? end
