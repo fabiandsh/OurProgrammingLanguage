@@ -13,61 +13,61 @@ extern FILE *yyin;
 
 
 sentences	: 
-	  	| sentence {printf("se encontro una sentencia sola\n");}
-	  	| decfun   {printf("se encontro una función\n");}
-		| sentences sentence {printf("concatenacion de sentencias con sentencia");}
-		| sentences decfun {printf("funcion en sentencias");}
+	  		| sentence 
+		  	| decfun   
+			| sentences sentence 
+			| sentences decfun 
 
 
-sentence	: decvar {printf(" se declara una variable y es sentencia\n");}
-	 	| asigvar {printf(" se asigna una variable y es sentencia \n");}
-		| initvar {printf(" se inicia variable y es sentencia\n");}
-		| operation SEP {printf(" se hace una operación y es sentencia\n");}
-		| whether {printf("se hace un if y es sentencia\n");}
-		| until {printf("se hace un for y es sentencia\n");}
-		| err {printf("se hace manejo error y es sentencia\n");}
-		| callfuntion  {printf("se hace llamado a la función y es sentencia\n");}
+sentence	: decvar
+	 		| asigvar 
+			| initvar 
+			| operation SEP 
+			| whether 
+			| until 
+			| err 
+			| callfuntion  
 
-decvar		: VAR IVR SEP {printf("se declara una variable\n");} 
+decvar		: VAR IVR SEP 
 
-initvar		: VAR IVR ASS STR SEP {printf("se inicia la variable como string\n ");}
-		| VAR IVR ASS INT SEP {printf("se inicia la variable con entero\n");}
-		| VAR IVR ASS FLO SEP {printf("se inica la variable con float\n");}
+initvar		: VAR IVR ASS STR SEP 
+			| VAR IVR ASS INT SEP 
+			| VAR IVR ASS FLO SEP 
 
-asigvar		: IVR ASS callfuntion {printf("se asigna variable con llamadofuncion\n");}
-		| IVR ASS operation SEP {printf("se asigna variable con operación\n");}
-		| IVR ASS value SEP {printf("Se asigna valriable con valor\n");}
+asigvar		: IVR ASS callfuntion 
+			| IVR ASS operation SEP 
+			| IVR ASS value SEP 
 
-value		: INT {printf("es entero\n");}
-       		| FLO {printf("es flotante\n");}
-		| STR {printf("es string\n");}
-		| IVR {printf("es identificador variable\n");}
+value		: INT 
+       		| FLO 
+			| STR 
+			| IVR 
 
-operation 	: value ADD value  {printf("suma\n");}
-		| value SUB value {printf("resta\n");}
-		| value MUL value {printf("multiplicacion\n");}
-		| value DIV value {printf("division\n");}
+operation 	: value ADD value 
+			| value SUB value 
+			| value MUL value 
+			| value DIV value 
 
-callfuntion 	: IFU ARG SEP {printf("llamada funcion\n");}
+callfuntion : IFU ARG SEP 
 
-whether		: WHE OPP condition CLP sentences END {printf("Declaración Si\n");}
-		| WHE OPP condition CLP sentences NOO sentences END {printf("Declaración SINO\n");}
+whether		: WHE OPP condition CLP sentences END 
+			| WHE OPP condition CLP sentences NOO sentences END 
 
-until 		: UNT OPP condition CLP sentences END {printf("bucle\n");}
+until 		: UNT OPP condition CLP sentences END 
 
-condition	: value SMR value {printf("menor que\n");}
-		| value SAE value {printf("menor igual que\n");}
-		| value GRT value {printf("mayor que\n");}
-		| value GAE value {printf("mayor igual que\n");}
-		| value EQU value {printf("igual\n");}
-		| value NEQ value {printf("no igual\n");}
+condition	: value SMR value 
+			| value SAE value 
+			| value GRT value 
+			| value GAE value 
+			| value EQU value 
+			| value NEQ value 
 
-decfun		: FUN IFU PAR sentences back FUE  {printf("Declaración función\n");}
+decfun		: FUN IFU PAR sentences back FUE 
 
-back 		: BCK value SEP {printf("retorno valor\n");}
-		| BCK operation SEP {printf("retorno operacion\n");}
+back 		: BCK value SEP 
+			| BCK operation SEP 
 
-err 		: SEK sentences CAP sentences END {printf("error\n");}
+err 		: SEK sentences CAP sentences END 
 %%
 /**S codigo de usuario**/
 

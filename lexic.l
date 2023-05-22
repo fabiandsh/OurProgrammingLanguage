@@ -17,11 +17,11 @@ argument \[("v"[0-9]+" "?)*\]
 {string}                        {return STR;}
 {float}                         {return FLO;}
 {int}                           {return INT;}
-=			        {return ASS;}
-\+			        {return ADD;}
-\*			        {return MUL;}
-\-			        {return SUB;}
-\/			        {return DIV;}
+=			                    {return ASS;}
+\+			                    {return ADD;}
+\*			                    {return MUL;}
+\-			                    {return SUB;}
+\/			                    {return DIV;}
 "<"                             {return SMR;}
 "<="                            {return SAE;}
 ">"                             {return GRT;}
@@ -42,8 +42,9 @@ argument \[("v"[0-9]+" "?)*\]
 "seek"                          {return SEK;}
 "funcEnd"                       {return FUE;}
 "capture"                       {return CAP;}
-[ \t\n]			       	{/*ingonar espacios*/}
-.			        {printf("Error léxico: %s\n", yytext);}
+[ \t\n]			       	        {/*ingonar espacios*/}
+.			                    {printf("Error léxico: %s\n", yytext);}
 %%
 /**Sección de codigo de usaurio**/
 int yywrap(){return 1;}
+t
